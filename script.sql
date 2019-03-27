@@ -16,14 +16,14 @@
 	CREATE TABLE Certificacion(idCertificacion int not null auto_increment primary key,
 							   idTipo int not null,
 							   idEstudiante int not null,
-							   nota decimal(2,2) not null,
+							   nota decimal(4,2) not null,
 							   foreign key(idTipo) references Tipo(idTipo),
 							   foreign key(idEstudiante) references Estudiante(idEstudiante));
 
 	CREATE TABLE Nota(idNota int not null auto_increment primary key,
 					  idEstudiante int not null,
 					  idMateria int not null,
-					  nota decimal(2,2) not null,
+					  nota decimal(4,2) not null,
 					  periodo varchar(16) not null,
 					  anio varchar(4) not null,
 					  porcentaje varchar(8) not null,
