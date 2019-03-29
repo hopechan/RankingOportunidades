@@ -14,24 +14,22 @@
                 $sql = "INSERT INTO estudiante (idEstudiante, nombre, apellidos, fechaNacimiento, centroEscolar) VALUES ('".$idEstudiante."','".$nombre."','".$apellido."','".$fechanac."','".$centroesc."')";
                 $conn -> execQueryO($sql);
                 $conn = null;
-
             } catch (mysqli_sql_execption $e) {
                 throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
-                
             }
         }
 
         public function Obtenerest() {
             try {
                 $conn = new Conexion();
-                $sql = "SELECT idEstudiante, nombre, apellidos, fechaNacimiento, centroEscolar FROM estudiante";
+                $sql = "SELECT idEstudiante, nombre, apellidos, fechaNacimiento, centroEscolar FROM Estudiante";
                 $result = $conn ->execQueryO($sql);
                 $coleccionest = array();
                 while ($estudiante = $result->fetch_assoc()) {
-                    $est = new Estudiante(); 
+                    $est = new Estudiante();
                     $est -> setIdEstudiante($estudiante ['idEstudiante']);
                     $est -> setNombre($estudiante['nombre']);
-                    $est -> setApellido($estudiante['apellido']);
+                    $est -> setApellidos($estudiante['apellidos']);
                     $est -> setFechaNacimiento($estudiante['fechaNacimiento']);
                     $est -> setCentroEscolar($estudiante['centroEscolar']);
                     array_push($coleccionest, $est);
@@ -58,6 +56,7 @@
                 throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
             }
         }
+
+        public function obtenerRanking(){}
     }
-    
 ?>

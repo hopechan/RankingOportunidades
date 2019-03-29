@@ -1,4 +1,4 @@
-a<?php
+<?php
 require_once("conexion.php");
 require_once("../modelo/tipo.php");
 class ControladorTipo{
