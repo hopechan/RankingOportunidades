@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+@font-face{
+    font-family: "Caviar Dreams";
+    src: local("./font/CaviarDreams.ttf") format("truetype");
+}
+
+body {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: century gothic;
+    color: white;
+    font-family: "Caviar Dreams", Fallback, sans-serif;
+}
+
+header{
+    background-color: darkslategrey;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+
+#nav{
+    background-color: darkslategrey;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+article {
+    background-color: brown;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+
+.box {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    width: 60px;
+    height: 35px;
+    font-family: century gothic;
+    font-size: 16pt;
+}
+
+.box2 {
+    background-color: darkgreen;
+    font-family: century gothic;
+    text-align: center;
+    width: auto;
+    color: white;
+    height: auto;
+    border: solid darkgreen 1px;
+    text-decoration: none;
+    font-size: 16pt;
+    padding: 2px;
+    border-radius:5px;
+}
+
+li{
+    display: inline-block;
+    text-decoration: none;
+    padding-top:3px;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top:3px;
+}
+.box3 {
+    background-color: gray;
+    font-family: century gothic;
+    text-align: center;
+    width: 175px;
+    color: white;
+    height: 45px;
+    border: solid gray 1px;
+    text-decoration: none;
+    font-size: 16pt;
+    padding: 2px;
+}
+
+.barra{
+    background-color: black;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.barra a{
+    float: left;
+    color:white;
+    opacity: 0.8;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.barra img{
+    width: 30%;
+    height: 10%;
+}
+
+.lateral{
+    height: 82.5%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 13.5%;
+    left: 0.5%;
+    background-color: black;
+    padding-top: 20px;
+    border-radius: 4px;
+    overflow-x: hidden;
+}
+
+.lateral a{
+    padding: 15px 8px 15px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    font-size: 21px;
+}
+
+.lateral a:hover{
+    background-color: red;
+    opacity: 0.8;
+    color: white;
+}
+
+.main{
+    height: auto;
+    margin-top: -0.9%;
+    width: 84%;
+    margin-left: 16%;
+    color: black;
+    border-radius: 4px;
+    align-content: center;
+}
+
+.main th{
+    background-color: red;
+    height: 20%;
+    text-align: center;
+}
+
+.opciones{
+    margin-left: 70%;
+}
+
