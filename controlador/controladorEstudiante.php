@@ -50,6 +50,17 @@
             }
         }
 
+        function maxId(){
+            try {
+                $conn = new Conexion();
+                $sql = "SELECT MAX(idEstudiante) FROM Estudiante";
+                $max = $conn->execQueryO($sql);
+                return $max;
+            } catch (mysqli_sql_execption $e) {
+                throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
+            }
+        }
+
         public function deletestu($idEstudiante){
             try {
                 $conn = new Conexion();
