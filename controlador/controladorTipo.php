@@ -69,5 +69,22 @@ class ControladorTipo{
             throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
         }
     }
+
+    public function ObtenerTipoxid($idTipo){
+        try {
+            $conn = new Conexion();
+            $sql="SELECT idTipo, tipo FROM tipo WHERE idTipo =" . $idTipo;
+            $rs = $conn->execQueryO($sql);
+            $tipo = array();
+            while ($tipo = $rs->fetch_assoc()) {
+                $nombre = $tipo['tipo'];
+                array_push($tipo, $nombre);
+            }
+            $conn = null;
+            return $tipo;
+        } catch (mysqli_sql_exception $e) {
+            throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
+        }
+    }
 }
 ?>
