@@ -36,7 +36,7 @@
             include_once("../controlador/controladorEstudiante.php");
             $ce = new ControladorEst();
             $total = $ce->Obtenerest();
-            /**
+            
             for ($i=0; $i < sizeof($total); $i++) {
                 $foto = $ce->obtenerFoto($total[$i]->getIdEstudiante());
                 echo "<section class='estudiante'>";
@@ -49,15 +49,7 @@
                 echo '<section class="ver"><a href="./verEstudiante.php?idEstudiante='.$total[$i]->getIdEstudiante().'">Ver</a></section>';
                 echo "</section>";
             }
-            */
-            for ($i=0; $i < sizeof($total); $i++) {
-                echo "<tr>";
-                echo "<td>".$total[$i]->getNombre()." ".$total[$i]->getApellidos()."</td>";
-                echo "<td>".$total[$i]->getYear()."</td>";
-                echo "<td>".$total[$i]->getCentroEscolar()."</td>";
-                echo "<td><a href='./verEstudiante.php?idEstudiante=".$total[$i]->getIdEstudiante()."'>Ver</a>  <a href='./agregarNota.php?idEstudiante=".$total[$i]->getIdEstudiante()."'>Nota</a></td>";
-                echo "</tr>";
-            }
+            
         ?>
         </table>
     </section>

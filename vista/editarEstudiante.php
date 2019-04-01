@@ -30,7 +30,7 @@
                 <h3>Nuevo Estudiante</h3>
                 <fieldset>
                     <legend>Datos Personales</legend>
-                    Nombre: <input type="text" name="txtNombre" value=<?echo $estudiante[0]->getNombre()?>>
+                    Nombre: <input type="text" name="txtNombre" value=<?php echo $estudiante[0]->getNombre()?>>
                     Apellidos: <input type="text" name="txtApellidos" value=<?echo $estudiante[0]->getApellidos()?>><br>
                     Fecha Nacimiento: <input type="date" name="txtFechaNac" value=<?echo $estudiante[0]->getFechaNacimiento()?>><br>
                     Telefono: <input type="tel" name="txtTelefono" value=<?echo $estudiante[0]->getTelefono()?>><br>

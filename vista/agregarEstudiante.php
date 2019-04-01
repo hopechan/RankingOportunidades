@@ -20,16 +20,25 @@
     </section>
     <section class="main">
         <section class="formulario">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <h3>Nuevo Estudiante</h3>
                 <fieldset>
                     <legend>Datos Personales</legend>
-                    Nombre: <input type="text" name="txtNombre" placeholder="Ingrese el nombre">
-                    Apellidos: <input type="text" name="txtApellidos" placeholder="Ingrese los apellidos"><br>
-                    Fecha Nacimiento: <input type="date" name="txtFechaNac" placeholder="1999-12-5"><br>
-                    Telefono: <input type="tel" name="txtTelefono" placeholder="Ingrese numero de telefono"><br>
-                    email: <input type="email" name="txtEmail" placeholder="Ingrese correo electronico"><br>
-                    Direccion: <input type="text" name="txtDireccion" id="">
+                    Nombre:	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="txtNombre" placeholder="Ingrese el nombre"><br>
+                    Apellidos:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="txtApellidos" placeholder="Ingrese los apellidos"><br>
+                    Fecha Nacimiento: &nbsp&nbsp<input type="date" name="txtFechaNac" placeholder="1999-12-5"><br>
+                    Telefono: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="tel" name="txtTelefono" placeholder="Ingrese numero de telefono"><br>
+                    email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="email" name="txtEmail" placeholder="Ingrese correo electronico"><br>
+                    Direccion: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="text" name="txtDireccion" id="">
+                </fieldset><br>
+                <fieldset>
+                    <legend>Foto</legend>
+                    <input type="file" name="foto">
                 </fieldset><br>
                 <fieldset>
                     <legend>Datos Oportunidades</legend>
@@ -39,6 +48,7 @@
                         <option value="">YEAR 3</option>
                     </select>Centro Escolar: <input type="text" name="txtCE" placeholder="Ingrese Centro Escolar"> 
                 </fieldset>
+                <br>
                 <input type="submit" value="Guardar" name="btnGuardar">
             </form>
         </section>
@@ -46,6 +56,7 @@
     <?php
         if (isset($_POST['btnGuardar'])) {
             include_once("../modelo/estudiante.php");
+            include_once("../modelo/documento");
             include_once("../controlador/controladorEstudiante.php");
             $e = new Estudiante();
                 $e->setIdEstudiante(null);
@@ -57,6 +68,12 @@
                 $e->setDireccion($_POST['txtDireccion']);
                 $e->setYear($_POST['cmbYear']);
                 $e->setCentroEscolar($_POST['txtCE']);
+            $foto = $_FILES['']
+            $d = new Documentos();
+                $d->setIdDocumento(null);
+                $d->setIdEstudiante(($ce->maxId() + 1)); //obtengo el ultimo id y le sumo 1
+                $d->setNombreDocumento("foto");
+                $d->setDocumento();
             $ce = new ControladorEst();
             $ce->Agregarestudiante($e);
             echo "<script type='text/javascript'>

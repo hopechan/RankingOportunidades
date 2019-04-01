@@ -32,9 +32,9 @@
         <section class="datos">
             <table>
                 <tr>
-                    <td><?echo $estudiante[0]->getNombre()." ".$estudiante[0]->getApellidos()?></td>
+                    <td><?php echo $estudiante[0]->getNombre()." ".$estudiante[0]->getApellidos()?></td>
                     <td>
-                        <?
+                        <?php
                             if ($foto == null) {
                                 echo "<section class='foto'><img src='./img/default.jpeg'/></section>";
                             } else {
@@ -43,15 +43,15 @@
                         ?>
                     </td>
                 </tr>
-                <tr><td><?echo $estudiante[0]->getTelefono()?></td></tr>
-                <tr><td><?echo $estudiante[0]->getEmail()?></td></tr>
-                <tr><td><?echo $estudiante[0]->getFechaNacimiento()." (".$ce->calcularEdad($estudiante[0]->getFechaNacimiento())." años)"?></td></tr>
-                <tr><td><?echo $estudiante[0]->getDireccion()?></td></tr>
+                <tr><td><?php echo $estudiante[0]->getTelefono()?></td></tr>
+                <tr><td><?php echo $estudiante[0]->getEmail()?></td></tr>
+                <tr><td><?php echo $estudiante[0]->getFechaNacimiento()." (".$ce->calcularEdad($estudiante[0]->getFechaNacimiento())." años)"?></td></tr>
+                <tr><td><?php echo $estudiante[0]->getDireccion()?></td></tr>
             </table>
         </section>
         <form method="post">
-            <a href="./editarEstudiante.php?idEstudiante=<?echo $estudiante[0]->getIdEstudiante()?>">Editar</a>
-            <a href="../controlador/borrarEstudiante.php?idEstudiante=<?echo $estudiante[0]->getIdEstudiante()?>">Borrar</a>
+            <a href="./editarEstudiante.php?idEstudiante=<?php echo $estudiante[0]->getIdEstudiante()?>">Editar</a>
+            <a href="../controlador/borrarEstudiante.php?idEstudiante=<?php echo $estudiante[0]->getIdEstudiante()?>">Borrar</a>
         </form>
     </section>
 </body>
