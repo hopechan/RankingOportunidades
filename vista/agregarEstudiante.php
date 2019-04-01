@@ -1,53 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agregar</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Nuevo Estudiante</title>
 </head>
 <body>
-    <nav>
-    </nav>
-    <header>
-        <h3>Agregar Estudiante</h3>
-    </header>
-    <article>
-        <form method="post">
-            Nombre: <br><br>
-            <input type="text" name="txtNombre" class="box3"><br><br>
-            Apellidos: <br><br>
-            <input type="text" name="txtApellido" class="box3"><br><br>
-            Fecha de Nacimiento: <br><br>
-            <input type="date" name="numNaci" class="box3"><br><br>
-            Centro escolar:<br><br>
-            <input type="text" name="txtCe" class="box3"><br><br>
-            <input type="submit" value="Agregar" name="AddEst" class="box2">
-        </form>
-        <?php
-        require_once("../controlador/controladorEstudiante.php");
-        require_once("../modelo/estudiante.php");
-        if (isset($_POST['AddEst'])) {
-            $nombre = $_POST['txtNombre'];
-            $apellidos = $_POST['txtApellido'];
-            $fechanac = $_POST['numNaci'];
-            $centroesc = $_POST['txtCe'];
+    <section class="barra">
+        <a href=""><img src="../vista/img/logo.png" alt="logo Oportunidades"></a>
+    </section>
+    <section class="lateral">
+        <a href="../index.php"><i class="fas fa-home"></i> Inicio</a>
+        <a href="./webEstudiantes.php"><i class="fas fa-user-graduate"></i> Estudiantes</a>
+        <a href="./webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
+        <a href="./webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
+    </section>
+    <section class="main">
+        <section class="formulario">
+            <form method="post">
+                <h3>Nuevo Estudiante</h3>
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    Nombre: <input type="text" name="txtNombre" placeholder="Ingrese el nombre">
+                    Apellidos: <input type="text" name="txtApellidos" placeholder="Ingrese los apellidos"><br>
+                    Fecha Nacimiento: <input type="date" name="txtFechaNac" placeholder="1999-12-5"><br>
+                    Telefono: <input type="tel" name="txtTelefono" placeholder="Ingrese numero de telefono"><br>
+                    email: <input type="email" name="txtEmail" placeholder="Ingrese correo electronico"><br>
+                    Direccion: <input type="text" name="txtDireccion" id="">
+                </fieldset><br>
+                <fieldset>
+                    <legend>Datos Oportunidades</legend>
+                    Año: <select name="cmbYear">
+                        <option value="1">YEAR 1</option>
+                        <option value="">YEAR 2</option>
+                        <option value="">YEAR 3</option>
+                    </select>Centro Escolar: <input type="text" name="txtCE" placeholder="Ingrese Centro Escolar"> 
+                </fieldset>
+                <input type="submit" value="Guardar" name="btnGuardar">
+            </form>
+        </section>
+    </section>
+    <?php
+        if (isset($_POST['btnGuardar'])) {
+            include_once("../modelo/estudiante.php");
+            include_once("../controlador/controladorEstudiante.php");
+            $e = new Estudiante();
+                $e->setIdEstudiante(null);
+                $e->setNombre($_POST['txtNombre']);
+                $e->setApellidos($_POST['txtApellidos']);
+                $e->setFechaNacimiento($_POST['txtFechaNac']);
+                $e->setTelefono($_POST['txtTelefono']);
+                $e->setEmail($_POST['txtEmail']);
+                $e->setDireccion($_POST['txtDireccion']);
+                $e->setYear($_POST['cmbYear']);
+                $e->setCentroEscolar($_POST['txtCE']);
             $ce = new ControladorEst();
-            $nuevoEstudiante = new Estudiante();
-            $nuevoEstudiante -> setIdEstudiante(null);
-            $nuevoEstudiante -> setNombre($nombre);
-            $nuevoEstudiante -> setApellidos($apellidos);
-            $nuevoEstudiante -> setFechaNacimiento($fechanac);
-            $nuevoEstudiante -> setCentroEscolar($centroesc);
-            $ce -> Agregarestudiante($nuevoEstudiante);
+            $ce->Agregarestudiante($e);
             echo "<script type='text/javascript'>
-            alert('¡Registro agregado con exito!');
-            window.location='../index.php';
-            </script>";
+                alert('Registro guardado con exito');
+                window.location='../vista/webEstudiantes.php';
+                </script>
+                ";
         }
-        
-        ?>
-    </article>  
+    ?>
 </body>
 </html>

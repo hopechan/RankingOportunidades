@@ -18,5 +18,48 @@
         <a href="./webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
         <a href="./webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
     </section>
+    <section><br></section>
+    <section class="main">
+        <section class="opciones">
+            <input class="btnNuevo" type="button" value="Nuevo" onclick="window.location='./agregarEstudiante.php'">
+            <input type="text" name="txtBusqueda"><i class="fas fa-search"></i>
+        </section>
+        <hr>
+        <table>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Year</th>
+                <th>Centro Escolar</th>
+                <th>Opciones</th>
+            </tr>
+        <?php
+            include_once("../controlador/controladorEstudiante.php");
+            $ce = new ControladorEst();
+            $total = $ce->Obtenerest();
+            /**
+            for ($i=0; $i < sizeof($total); $i++) {
+                $foto = $ce->obtenerFoto($total[$i]->getIdEstudiante());
+                echo "<section class='estudiante'>";
+                if ($foto == null) {
+                    echo "<section class='foto'><img src='./img/default.jpeg'/></section>";
+                } else {
+                    echo "<section class='foto'><img src='data:image/jpeg;base64,".base64_encode($foto[0]->getDocumento())."'/></section>";
+                }
+                echo "<section class='nombre'>".$total[$i]->getNombre()." ".$total[$i]->getApellidos()."</section>";
+                echo '<section class="ver"><a href="./verEstudiante.php?idEstudiante='.$total[$i]->getIdEstudiante().'">Ver</a></section>';
+                echo "</section>";
+            }
+            */
+            for ($i=0; $i < sizeof($total); $i++) {
+                echo "<tr>";
+                echo "<td>".$total[$i]->getNombre()." ".$total[$i]->getApellidos()."</td>";
+                echo "<td>".$total[$i]->getYear()."</td>";
+                echo "<td>".$total[$i]->getCentroEscolar()."</td>";
+                echo "<td><a href='./verEstudiante.php?idEstudiante=".$total[$i]->getIdEstudiante()."'>Ver</a>  <a href='./agregarNota.php?idEstudiante=".$total[$i]->getIdEstudiante()."'>Nota</a></td>";
+                echo "</tr>";
+            }
+        ?>
+        </table>
+    </section>
 </body>
 </html>

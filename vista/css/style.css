@@ -145,22 +145,66 @@ a{
 }
 
 .main{
-    height: auto;
+    height: 567px;
     margin-top: -0.9%;
     width: 84%;
     margin-left: 16%;
     color: black;
     border-radius: 4px;
     align-content: center;
+    font-family: "Caviar Dreams", Fallback, sans-serif;
 }
 
-.main th{
-    background-color: red;
-    height: 20%;
+
+
+.estudiante{
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    box-shadow: 2px 2px 20px darkslategray;
+    margin: 3% 3% 3% 3%;
+    background-color: black;
+    color: white;
+    border-radius: 4%;
+}
+
+.foto img{
+    width: 200px;
+    height: 180px;
+    margin-left: 0%;
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+}
+
+.estudiante:hover{
+    transform: scale(1.2);
+}
+
+.nombre{
+    text-align: center;
+    padding: 25px;
+}
+
+.ver {
     text-align: center;
 }
 
-.opciones{
-    margin-left: 70%;
+.formulario{
+    margin-left: 10%;
+    margin-top: 3%;
 }
+
+.formulario input[type=text], input[type=tel], input[type=date], input[type=email], select, textarea{
+    width: 35%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.formulario{
+    width: 50%;
+}
+
 
