@@ -15,7 +15,7 @@
     <section class="lateral">
         <a href="../index.php"><i class="fas fa-home"></i> Inicio</a>
         <a href="./webEstudiantes.php"><i class="fas fa-user-graduate"></i> Estudiantes</a>
-        <a href="./webNotas.php.php"><i class="fas fa-book-open"></i> Notas</a>
+        <a href="./webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
         <a href="./webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
     </section>
 </body>

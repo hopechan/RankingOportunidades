@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./vista/img/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="./vista/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>RANKING OPORTUNIDADES</title>
@@ -18,28 +19,5 @@
         <a href="./vista/webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
         <a href="./vista/webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
     </section>
-    <!--
-    <section class="main">
-        <h2>Ranking</h2>
-        <table>
-            <tr>
-                <th>Alumno</th>
-                <th>Nota</th>
-                <th>Opciones</th>
-            </tr>
-            <tr>
-                <td>Esperanza Elizabeth Dueñas Acostas</td>
-                <td>9.50</td>
-                <td><a href="#">Detalle</a></td>
-            </tr>
-            <tr>
-                <td>Roberto Antonio Morales</td>
-                <td>9.00</td>
-                <td><a href="#">Detalle</a></td>
-            </tr>
-        </table>
-        <br><br>
-    </section>
-    -->
 </body>
 </html>

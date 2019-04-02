@@ -98,7 +98,10 @@ a{
 .barra{
     background-color: black;
     overflow: hidden;
-    border-radius: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .barra a{
@@ -117,15 +120,14 @@ a{
 }
 
 .lateral{
-    height: 82.5%;
+    height: 100%;
     width: 15%;
     position: fixed;
     z-index: 1;
-    top: 13.5%;
-    left: 0.5%;
+    top: 11.4%;
+    left: 0%;
     background-color: black;
     padding-top: 20px;
-    border-radius: 4px;
     overflow-x: hidden;
 }
 
@@ -146,7 +148,7 @@ a{
 
 .main{
     height: 567px;
-    margin-top: -0.9%;
+    margin-top: 7%;
     width: 84%;
     margin-left: 16%;
     color: black;

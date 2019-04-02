@@ -100,6 +100,32 @@
             }
         }
 
+        function buscarEstudiante($busqueda){
+            try {
+                $conn = new Conexion();
+                //puse * para probar si funciona esto :v
+                $sql = "SELECT * FROM Estudiante WHERE nombre LIKE '%" . $busqueda . "%' OR apellidos LIKE '%" . $busqueda . "%' OR year LIKE '%" . $busqueda . "%' OR centroEscolar LIKE '%" . $busqueda . "%'";
+                $rs = $conn->execQueryO($sql);
+                $coleccion = array();
+                while ($estudiante = $rs->fetch_assoc()) {
+                    $est = new Estudiante();
+                        $est -> setIdEstudiante($estudiante ['idEstudiante']);
+                        $est -> setNombre($estudiante['nombre']);
+                        $est -> setApellidos($estudiante['apellidos']);
+                        $est -> setFechaNacimiento($estudiante['fechaNacimiento']);
+                        $est -> setTelefono($estudiante['telefono']);
+                        $est -> setEmail($estudiante['email']);
+                        $est -> setDireccion($estudiante['direccion']);
+                        $est -> setYear($estudiante['year']);
+                        $est -> setCentroEscolar($estudiante['centroEscolar']);
+                    array_push($coleccion, $est);
+                }
+                return $coleccion;
+            } catch (mysqli_sql_exception $e) {
+                throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
+            }
+        }
+
         function borrarDocumento($idEstudiante){
             try {
                 $conn = new Conexion();

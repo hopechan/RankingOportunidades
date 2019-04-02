@@ -68,7 +68,7 @@
                 $e->setDireccion($_POST['txtDireccion']);
                 $e->setYear($_POST['cmbYear']);
                 $e->setCentroEscolar($_POST['txtCE']);
-            $foto = $_FILES['']
+            $foto = $_FILES[''];
             $d = new Documentos();
                 $d->setIdDocumento(null);
                 $d->setIdEstudiante(($ce->maxId() + 1)); //obtengo el ultimo id y le sumo 1
