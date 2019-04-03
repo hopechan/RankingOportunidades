@@ -17,7 +17,9 @@
         <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
         <a href="./vista/webEstudiantes.php"><i class="fas fa-user-graduate"></i> Estudiantes</a>
         <a href="./vista/webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
+        <a href="./vista/VerMate.php">Materias</a>
         <a href="./vista/webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
+        <a href="">Configuraciones</a>
     </section>
 </body>
 </html>
