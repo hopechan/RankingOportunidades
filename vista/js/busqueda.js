@@ -5,9 +5,10 @@ function buscarEstudiante() {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");//solo IE :v
     }
     xhr.onreadystatechange = function () {
-        if (xhr.readyState== 4) {
+        if (xhr.readyStateB == 4) {
             var resultado = document.getElementById('main');
             resultado.innerHTML = xhr.responseText;
+            console.log(resultado);
         }
     }
 

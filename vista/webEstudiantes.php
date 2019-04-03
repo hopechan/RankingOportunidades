@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./js/busqueda.js"></script>
-    <script src="./js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./js/busqueda.js"></script>
     <title>Estudiantes</title>
 </head>
 <body>
     <section class="barra">
         <a href=""><img src="../vista/img/logo.png" alt="logo Oportunidades"></a>
         <section class="opciones">
-            <input class="btnNuevo" type="button" value="Nuevo" onclick="window.location='./agregarEstudiante.php'">
-            <input type="text" name="txtBusqueda" id="txtBusqueda" onkeyup="buscarEstudiante(this.value)"><i class="fas fa-search"></i>
+            <input type="text" name="txtBusqueda" placeholder="Buscar ..." id="txtBusqueda" onkeyup="buscarEstudiante(this.value)"><i id="buscar" class="fa fa-search"></i>
         </section>
     </section>
     <section class="lateral">
@@ -26,6 +24,7 @@
     </section>
     <section><br></section>
     <section class="main" id="main">
+        <input class="btnNuevo" type="button" value="Nuevo" onclick="window.location='./agregarEstudiante.php'">
         <hr>
         <section id="resultado"></section>
         <?php

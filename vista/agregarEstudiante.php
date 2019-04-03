@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="./js/busqueda.js"></script>
     <title>Nuevo Estudiante</title>
 </head>
 <body>
@@ -24,17 +25,17 @@
                 <h3>Nuevo Estudiante</h3>
                 <fieldset>
                     <legend>Datos Personales</legend>
-                    Nombre:	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="text" name="txtNombre" placeholder="Ingrese el nombre"><br>
+                    Nombre:	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+                    <input type="text" name="txtNombre" placeholder="Ingrese el nombre" id="campoTexto" required><br>
                     Apellidos:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="text" name="txtApellidos" placeholder="Ingrese los apellidos"><br>
-                    Fecha Nacimiento: &nbsp&nbsp<input type="date" name="txtFechaNac" placeholder="1999-12-5"><br>
+                    <input type="text" name="txtApellidos" placeholder="Ingrese los apellidos" id="campoTexto" required><br>
+                    Fecha Nacimiento: &nbsp&nbsp<input type="date" name="txtFechaNac" placeholder="1999-12-5" id="campoFecha" required><br>
                     Telefono: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="tel" name="txtTelefono" placeholder="Ingrese numero de telefono"><br>
+                    <input type="tel" name="txtTelefono" placeholder="Ingrese numero de telefono" id="campoTelefono" required pattern="[267]{1}[0-9]{3}-[0-9]{4}" title="0000-0000"><br>
                     email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="email" name="txtEmail" placeholder="Ingrese correo electronico"><br>
+                    <input type="email" name="txtEmail" placeholder="Ingrese correo electronico" id="campoCorreo" required><br>
                     Direccion: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="text" name="txtDireccion" id="">
+                    <input type="text" name="txtDireccion" id="" id="campoTexto" required>
                 </fieldset><br>
                 <fieldset>
                     <legend>Foto</legend>
@@ -42,14 +43,14 @@
                 </fieldset><br>
                 <fieldset>
                     <legend>Datos Oportunidades</legend>
-                    Año: <select name="cmbYear">
+                    Año: <select name="cmbYear" required>
                         <option value="1">YEAR 1</option>
                         <option value="">YEAR 2</option>
                         <option value="">YEAR 3</option>
-                    </select>Centro Escolar: <input type="text" name="txtCE" placeholder="Ingrese Centro Escolar"> 
+                    </select>Centro Escolar: <input type="text" name="txtCE" placeholder="Ingrese Centro Escolar" id="campoTexto" required> 
                 </fieldset>
                 <br>
-                <input type="submit" value="Guardar" name="btnGuardar">
+                <input type="submit" value="Guardar" name="btnGuardar" class="btnGuardar">
             </form>
         </section>
     </section>

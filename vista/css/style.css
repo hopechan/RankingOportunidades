@@ -6,7 +6,93 @@
 }
 
 body {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: century gothic;
+    color: white;
     font-family: "Caviar Dreams", Fallback, sans-serif;
+}
+
+header{
+    background-color: darkslategrey;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+
+#nav{
+    background-color: darkslategrey;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+article {
+    background-color: brown;
+    opacity: 0.8;
+    width: 50%;
+    text-align: center;
+    height: 15%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius: 7px;
+}
+
+.box {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    width: 60px;
+    height: 35px;
+    font-family: century gothic;
+    font-size: 16pt;
+}
+
+.box2 {
+    background-color: darkgreen;
+    font-family: century gothic;
+    text-align: center;
+    width: auto;
+    color: white;
+    height: auto;
+    border: solid darkgreen 1px;
+    text-decoration: none;
+    font-size: 16pt;
+    padding: 2px;
+    border-radius:5px;
+}
+
+li{
+    display: inline-block;
+    text-decoration: none;
+    padding-top:3px;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top:3px;
+}
+.box3 {
+    background-color: gray;
+    font-family: century gothic;
+    text-align: center;
+    width: 175px;
+    color: white;
+    height: 45px;
+    border: solid gray 1px;
+    text-decoration: none;
+    font-size: 16pt;
+    padding: 2px;
 }
 
 .barra{
@@ -71,7 +157,9 @@ body {
     font-family: "Caviar Dreams", Fallback, sans-serif;
 }
 
-
+.btnGuardar{
+    background-color: blue;
+}
 
 .estudiante{
     width: 200px;
@@ -110,7 +198,7 @@ body {
     margin-top: 3%;
 }
 
-.formulario input[type=text], input[type=tel], input[type=date], input[type=email], textarea{
+.formulario input[type=text], input[type=tel], input[type=date], input[type=email], select, textarea{
     width: 35%;
     padding: 10px;
     margin: 2px 0  10px;
@@ -123,21 +211,26 @@ body {
     width: 50%;
 }
 
-.estilo select, .estilo option{
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px black;
+.opciones{
+    margin-left: 85%;
 }
 
-table, tr ,th, td {
-    border: solid black 1px;
-    border-collapse: collapse; 
-    padding-left: 5px;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    padding-right: 5px;
-    text-align: center;
+.btnNuevo{
+    width: 100px;
+    height: 27px;
 }
 
+#buscar {
+    position: relative;
+    z-index: 1;
+    left: -25px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
 
+#txtBusqueda{
+    width: 150px;
+    height: 25px;
+}

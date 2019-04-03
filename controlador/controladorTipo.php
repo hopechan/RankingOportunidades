@@ -75,13 +75,15 @@ class ControladorTipo{
             $conn = new Conexion();
             $sql="SELECT idTipo, tipo FROM tipo WHERE idTipo =" . $idTipo;
             $rs = $conn->execQueryO($sql);
-            $tipo = array();
+            $coleccion = array();
             while ($tipo = $rs->fetch_assoc()) {
-                $nombre = $tipo['tipo'];
-                array_push($tipo, $nombre);
+                $t = new Tipo;
+                $t->setIdTipo($tipo['idTipo']);
+                $t->setTipo($tipo['tipo']);
+                array_push($coleccion, $t);
             }
             $conn = null;
-            return $tipo;
+            return $coleccion;
         } catch (mysqli_sql_exception $e) {
             throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
         }

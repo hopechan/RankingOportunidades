@@ -31,11 +31,11 @@
                 <fieldset>
                     <legend>Datos Personales</legend>
                     Nombre: <input type="text" name="txtNombre" value=<?php echo $estudiante[0]->getNombre()?>>
-                    Apellidos: <input type="text" name="txtApellidos" value=<?echo $estudiante[0]->getApellidos()?>><br>
-                    Fecha Nacimiento: <input type="date" name="txtFechaNac" value=<?echo $estudiante[0]->getFechaNacimiento()?>><br>
-                    Telefono: <input type="tel" name="txtTelefono" value=<?echo $estudiante[0]->getTelefono()?>><br>
-                    email: <input type="email" name="txtEmail" value=<?echo $estudiante[0]->getEmail()?>><br>
-                    Direccion: <input type="text" value="<?echo $estudiante[0]->getDireccion()?>">
+                    Apellidos: <input type="text" name="txtApellidos" value=<?php echo $estudiante[0]->getApellidos()?>><br>
+                    Fecha Nacimiento: <input type="date" name="txtFechaNac" value=<?php echo $estudiante[0]->getFechaNacimiento()?>><br>
+                    Telefono: <input type="tel" name="txtTelefono" value=<?php echo $estudiante[0]->getTelefono()?>><br>
+                    email: <input type="email" name="txtEmail" value=<?php echo $estudiante[0]->getEmail()?>><br>
+                    Direccion: <input type="text" value="<?php echo $estudiante[0]->getDireccion()?>">
                 </fieldset><br>
                 <fieldset>
                     <legend>Datos Oportunidades</legend>
