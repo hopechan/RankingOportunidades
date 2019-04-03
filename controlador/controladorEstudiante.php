@@ -54,7 +54,11 @@
             try {
                 $conn = new Conexion();
                 $sql = "SELECT MAX(idEstudiante) FROM Estudiante";
-                $max = $conn->execQueryO($sql);
+                $result = $conn->execQueryO($sql);
+                $resultado = array();
+                while ($maximo = $result->fetch_assoc()) {
+                    $max = $maximo['MAX(idEstudiante)'];
+                }
                 return $max;
             } catch (mysqli_sql_execption $e) {
                 throw new MySQLiQueryException($sql, $e->getMessage(), $e->getCode());
@@ -192,7 +196,7 @@
             }
         }
 
-        function guardarDocumento(Documento $d){
+        function guardarDocumento(Documentos $d){
             try {
                 $conn = new Conexion();
                 $idDocumento = $d->getIdDocumento();
@@ -200,8 +204,8 @@
                 $tipo = $d->getNombreDocumento();
                 $documento = $d->getDocumento();
                 $descripcion = $d->getDescripcion();
-                $sql = "INSERT INTO Documento(idDocumento, idEstudiante, tipoDocumento, documento, descripcion) VALUES ('".$idDocumento."',
-                                            '".$idEstudiante."', '".$tipo."', '".$documento."', '".$descripcion."')";
+                $sql = "INSERT INTO Documentos(idDocumentos, idEstudiante, tipoDocumento, documento, descripcion) VALUES ('".$idDocumento."',
+                        '".$idEstudiante."', '".$tipo."', '".$documento."', '".$descripcion."')";
                 $conn->execQueryO($sql);
                 $conn = null;
             } catch (mysqli_sql_exception $e) {

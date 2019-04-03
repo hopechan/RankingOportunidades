@@ -56,10 +56,13 @@
     <?php
         if (isset($_POST['btnGuardar'])) {
             include_once("../modelo/estudiante.php");
-            include_once("../modelo/documento");
+            include_once("../modelo/documento.php");
             include_once("../controlador/controladorEstudiante.php");
+            $ce = new ControladorEst();
+            //obtengo el ultimo id ingresado en la tabla Estudiantes
+            $max = $ce->maxId();
             $e = new Estudiante();
-                $e->setIdEstudiante(null);
+                $e->setIdEstudiante($max+1);
                 $e->setNombre($_POST['txtNombre']);
                 $e->setApellidos($_POST['txtApellidos']);
                 $e->setFechaNacimiento($_POST['txtFechaNac']);
@@ -68,19 +71,18 @@
                 $e->setDireccion($_POST['txtDireccion']);
                 $e->setYear($_POST['cmbYear']);
                 $e->setCentroEscolar($_POST['txtCE']);
-            $foto = $_FILES[''];
+
+            $image = $_FILES['foto']['tmp_name'];
+            $imgContent = addslashes(file_get_contents($image));
             $d = new Documentos();
                 $d->setIdDocumento(null);
-                $d->setIdEstudiante(($ce->maxId() + 1)); //obtengo el ultimo id y le sumo 1
+                $d->setIdEstudiante($max+1);
                 $d->setNombreDocumento("foto");
-                $d->setDocumento();
-            $ce = new ControladorEst();
+                $d->setDocumento($imgContent);
+                $d->setDescripcion("Foto de perfil");
             $ce->Agregarestudiante($e);
-            echo "<script type='text/javascript'>
-                alert('Registro guardado con exito');
-                window.location='../vista/webEstudiantes.php';
-                </script>
-                ";
+            $ce->guardarDocumento($d);
+            echo "<script type='text/javascript'>alert('Se ha guardado un nuevo estudiante');window.location='../vista/webEstudiantes.php';</script>";
         }
     ?>
 </body>

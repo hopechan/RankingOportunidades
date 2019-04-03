@@ -6,7 +6,7 @@ function buscarEstudiante() {
     }
     xhr.onreadystatechange = function () {
         if (xhr.readyState== 4) {
-            var resultado = document.getElementById('resultado');
+            var resultado = document.getElementById('main');
             resultado.innerHTML = xhr.responseText;
         }
     }
