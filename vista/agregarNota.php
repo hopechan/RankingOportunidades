@@ -24,8 +24,8 @@
                     require_once("../controlador/controladorTipo.php");
                     $ct = new ControladorTipo();
                     $tipos= $ct -> obtenerTipos();
-                    for ($i=0; $i <sizeof($tipos) ; $i++) { 
-                       echo "<option value='".$tipos[$i]->getIdTipo()."'>".$tipos[$i]->getTipo()."</option><br><br>";
+                    for ($e=0; $e <sizeof($tipos) ; $e++) { 
+                       echo "<option value='".$tipos[$e]->getIdTipo()."'>".$tipos[$e]->getTipo()."</option><br><br>";
                     }
                 ?>
             </select><br><br>
@@ -36,7 +36,7 @@
                         require_once("../controlador/controladorEstudiante.php");
                         $ce = new ControladorEst();
                         $estudiantes= $ce ->Obtenerest();
-                        for ($i=0; $i <sizeof($tipos) ; $i++) { 
+                        for ($i=0; $i <sizeof($estudiantes) ; $i++) { 
                             echo "<option value='".$estudiantes[$i]->getIdEstudiante()."'>".$estudiantes[$i]->getNombre()." ".$estudiantes[$i]->getApellidos()."</option><br>";
                         }
                     ?>
@@ -45,39 +45,41 @@
         <?php
             if (isset($_POST['gen'])) {
                 $evaluaciones = $_POST['Evaluaciones'];
-               for ($i=0; $i < $evaluaciones; $i++) { 
-                   echo "Nota " . ($i+1) . "<br><br>";
+               for ($a=0; $a < $evaluaciones; $a++) { 
+                   echo "Nota " . ($a+1) . "<br><br>";
                   echo "<input type='number' name='notas[]' min='1' max='10'><br><br>";
                }
             echo "<input type='submit' value='Ok' name='save'><br><br>";
             echo " <input type='hidden' name='valores' value='" . $evaluaciones . "'>";
-
-            echo  "</form>";
             }
         ?>
+        </form>
         <?php
             if (isset($_POST['save'])) {
                  $evaluaciones = $_POST['valores'];
-                 $tipo= $_POST['cmbEstudiante'];
+                 $id= $_POST['cmbEstudiante'];
                  $notas = $_POST['notas'];
-                 //$tip = $tipos[$i]->getTipo();
+                 $idtipo = $_POST['cmbTipo'];
                 echo "<table>
                 <tr>
                 <th> Estudiante </th>
                 <th> Tipo de Evaluaion </th>";
-                for ($i=0; $i < $evaluaciones ; $i++) { 
-                    echo "<th>Nota " . ($i+1) . "</th>";
+                for ($o=0; $o < $evaluaciones ; $o++) { 
+                    echo "<th>Nota " . ($o+1) . "</th>";
                 }
                 echo "</tr>";
-                echo "<tr>
-                <td>" . $estudiantes[$i]->getNombre(). "&nbsp;" .$estudiantes[$i]->getApellidos()."</td>";
-                //$nombre = $ct->ObtenerTipoxid($tipo);
-                // for ($i=0; $i < sizeof($tipo); $i++) {
-                // echo "<td>".$tipos[$i]->getTipo()."</td>";
-                // }
-                 for ($i=0; $i < sizeof($notas); $i++) { 
+                echo "<tr>";
+                $estudiantes = $ce->buscarxId($id);
+                echo "<td>" . $estudiantes[0]->getNombre() . "&nbsp;" . $estudiantes[0]->getApellidos() . "</td>";
+                $nombre = $ct->ObtenerTipoxid($idtipo);
+                for ($i=0; $i < $nombre; $i++) { 
+                    echo "<td>".$nombre[$i]."</td>";
+                    echo $nombre;
+                }
+                
+                 for ($u=0; $u < sizeof($notas); $u++) { 
                             echo "<td>";
-                            echo $notas[$i];
+                            echo $notas[$u];
                             echo "</td>";
                 }
                 
