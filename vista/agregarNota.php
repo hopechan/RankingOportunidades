@@ -72,20 +72,16 @@
                 $estudiantes = $ce->buscarxId($id);
                 echo "<td>" . $estudiantes[0]->getNombre() . "&nbsp;" . $estudiantes[0]->getApellidos() . "</td>";
                 $nombre = $ct->ObtenerTipoxid($idtipo);
-                for ($i=0; $i < $nombre; $i++) { 
-                    echo "<td>".$nombre[$i]."</td>";
-                    echo $nombre;
-                }
-                
+                // for ($i=0; $i < $nombre; $i++) { 
+                //     echo "<td>".$nombre[$i]."</td>";
+                //     echo $nombre;
+                // }
+                echo "<td>" . $nombre[0] . "</td>";
                  for ($u=0; $u < sizeof($notas); $u++) { 
                             echo "<td>";
                             echo $notas[$u];
                             echo "</td>";
                 }
-                
-
-                
-    
             }
             
         ?>
