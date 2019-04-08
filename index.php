@@ -14,12 +14,17 @@
         <a href=""><img src="./vista/img/logo.png" alt="logo Oportunidades"></a>
     </section>
     <section class="lateral">
-        <a href="index.php"><i class="fas fa-home"></i> Inicio</a>
+        <a href="index.php" class="active"><i class="fas fa-home"></i> Inicio</a>
         <a href="./vista/webEstudiantes.php"><i class="fas fa-user-graduate"></i> Estudiantes</a>
         <a href="./vista/webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
-        <a href="./vista/VerMate.php">Materias</a>
-        <a href="./vista/webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
-        <a href="">Configuraciones</a>
+        <a href="./vista/webMateria.php"><i class="fas fa-certificate"></i> Materias</a>
+        <a href="./vista/webCertificacion.php"><i class="fas fa-book"></i> Certificaciones</a>
+        <a href="#"><i class="fas fa-cog"></i> Configuraciones</a>
+    </section>
+    <section class="main">
+        <canvas id="grafico" width="1600" height="900"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <script src="./vista/js/grafico.js"></script>
     </section>
 </body>
 </html>
