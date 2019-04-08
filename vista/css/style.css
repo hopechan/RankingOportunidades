@@ -419,3 +419,13 @@ a{
     text-decoration: none;
     margin-left: 90%;
 }
+
+table, tr ,th, td {
+    border: solid black 1px;
+    border-collapse: collapse; 
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    text-align: center;
+}
