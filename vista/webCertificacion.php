@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./img/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Certificaciones</title>
@@ -11,19 +12,19 @@
 <body>
     <section class="barra">
         <a href=""><img src="../vista/img/logo.png" alt="logo Oportunidades"></a>
+        <i class="fa fa-search"></i>
+        <input type="text" name="txtBusqueda" id="txtBusqueda" placeholder="Buscar ..." onkeyup="buscarEstudiante()">
     </section>
     <section class="lateral">
         <a href="../index.php"><i class="fas fa-home"></i> Inicio</a>
         <a href="./webEstudiantes.php"><i class="fas fa-user-graduate"></i> Estudiantes</a>
         <a href="./webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
-        <a href="./webCertificacion.php"><i class="fas fa-certificate"></i> Certificaciones</a>
+        <a href="./webMateria.php"><i class="fas fa-certificate"></i> Materias</a>
+        <a href="./webCertificacion.php" class="active"><i class="fas fa-book"></i> Certificaciones</a>
+        <a href="#"><i class="fas fa-cog"></i> Configuraciones</a>
     </section>
     <section>Certificaciones Realizadas</section>
     <section class="main">
-        <section class="opciones">
-        <input class="btnNuevo" type="button" value="Nuevo" onclick="window.location='./agregarCertificacion.php'">
-            <input type="text" name="txtBusqueda"><i class="fas fa-search"></i>
-        </section>
         <hr>
         <table>
             <caption>Certificaciones Realizadas</caption>

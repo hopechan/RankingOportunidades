@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agregar Notas</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <!--<link rel="stylesheet" href="./css/style.css">-->
 </head>
 <body>
-    <article>   
+    <article>
         <table width="1000px">
             <tr>
                 <th colspan="4">
-                    Agregar Nota 
+                    Agregar Nota
                 </th>
             </tr>
             <tr>
@@ -65,7 +65,7 @@
                             $cm = new controladorMate();
                             $materia = $cm->ObtenerMateria();
                             for ($mat=0; $mat < sizeof($materia) ; $mat++) { 
-                               echo "<option value='" . $materia[$mat]->getIdMateria() . "'>" . $materia[$mat]->getMateria() . "</option>";
+                                echo "<option value='" . $materia[$mat]->getIdMateria() . "'>" . $materia[$mat]->getMateria() . "</option>";
                             }
                         ?>
                     </select>
@@ -99,10 +99,10 @@
         </table><br><br>
         <?php
             if (isset($_POST['save'])) {
-                 $evaluaciones = $_POST['valores'];
-                 $id= $_POST['cmbEstudiante'];
-                  $notas = $_POST['notas'];
-                 $idtipo = $_POST['cmbTipo'];
+                $evaluaciones = $_POST['valores'];
+                $id= $_POST['cmbEstudiante'];
+                $notas = $_POST['notas'];
+                $idtipo = $_POST['cmbTipo'];
                 echo "<table>
                 <tr>
                 <th> Estudiante </th>
@@ -116,7 +116,7 @@
                 echo "<td>" . $estudiantes[0]->getNombre() . "&nbsp;" . $estudiantes[0]->getApellidos() . "</td>";
                 $nombre = $ct->ObtenerTipoxid($idtipo);
                 echo "<td>" . $nombre[0]->getTipo() . "</td>";
-                 for ($u=0; $u < sizeof($notas); $u++) { 
+                for ($u=0; $u < sizeof($notas); $u++) { 
                             echo "<td>";
                             echo $notas[$u];
                             echo "</td>";
@@ -129,12 +129,9 @@
                     </form>';
             }
             if (isset($_POST['si'])) {
-                // $valores = $_POST['notas'];
-                // $valores = $_POST['nf'];
                 include_once("../controlador/controladorNota.php");
                 $cn = new ControladorNota();
-                
-                for ($n=0; $n < sizeof($notas); $n++) { 
+                for ($n=0; $n < sizeof($notas); $n++) {
                     $nota = new Nota();
                     $nota->setIdNota(null);
                     $nota->setIdEstudiante($estudiantes[0]->getIdEstudiante());
@@ -152,7 +149,6 @@
                 //     </script>";
             }
         ?>
-        
     </article>
 </body>
 </html>

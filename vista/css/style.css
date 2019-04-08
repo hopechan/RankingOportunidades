@@ -124,11 +124,12 @@ a{
     width: 15%;
     position: fixed;
     z-index: 1;
-    top: 11.0%;
+    top: 11.7%;
     left: 0%;
     background-color: black;
     padding-top: 20px;
     overflow-x: hidden;
+    border-radius: 2px;
 }
 
 .lateral a{
@@ -138,6 +139,32 @@ a{
     color: #818181;
     display: block;
     font-size: 21px;
+}
+
+.lateral a.active{
+    background-color: crimson;
+    color: white;
+}
+
+#txtBusqueda{
+    padding: 6px;
+    margin-top: 15px;
+    margin-left: 455px;
+    font-size: 17px;
+    border: none;
+    border-radius: 2px;
+}
+
+.fa-search{
+    float: right;
+    padding: 7.5px 10px;
+    margin-top: 15px;
+    margin-right: 16px;
+    background: crimson;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 .lateral a:hover{
@@ -167,9 +194,11 @@ a{
     display: inline-block;
     box-shadow: 2px 2px 20px darkslategray;
     margin: 3% 3% 3% 3%;
-    background-color: black;
+    background-color: crimson;
     color: white;
     border-radius: 4%;
+    border: 2px solid black;
+    font-family: "Caviar Dreams", Fallback, sans-serif;
 }
 
 .foto img{
@@ -178,10 +207,7 @@ a{
     margin-left: 0%;
     border-top-left-radius: 4%;
     border-top-right-radius: 4%;
-}
-
-.estudiante:hover{
-    transform: scale(1.2);
+    border-bottom: 2px solid black;
 }
 
 .nombre{
@@ -189,8 +215,35 @@ a{
     padding: 25px;
 }
 
-.ver {
+.ver a{
+    padding: 10px;
+    color: white;
     text-align: center;
+    background-color:blue;
+    width: 25px;
+    margin-left: 2px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+#ver{
+    margin-left: 24%;
+}
+
+.notas a{
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color:blue;
+    width: 25px;
+    margin-left:55%;
+    margin-bottom: 50%;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.ver a:hover{
+    background-color: grey;
+    color:black;
 }
 
 .formulario{
@@ -220,17 +273,149 @@ a{
     height: 27px;
 }
 
-#buscar {
-    position: relative;
-    z-index: 1;
-    left: -25px;
-    top: 1px;
-    color: #7B7B7B;
-    cursor:pointer;
-    width: 0;
+/* elementos para estilo de la tabla materia*/
+.thbordes{
+    border:1px solid black;
+    background-color: rgb(226, 71, 71);
+    color:white;
+    font-family: "Caviar Dreams", Fallback, sans-serif;
+    font-size: 30px;
+    margin-left: 30%;
+}
+.thid{
+    width: 200px;
+    text-align: center;
+
+}
+.thMate{
+    width: 320px;
+    height:40px;
+    text-align: center;
+}
+.thAc{
+    width: 540px;
+    text-align: center;
+}
+/*estas son las celdas*/
+.tdbordes{
+    border:1px solid black;
+    background-color: rgb(219, 219, 219);
+    text-align: center;
+    font-family: Arial;
+    height:30px;
 }
 
-#txtBusqueda{
-    width: 150px;
-    height: 25px;
+.trbordes{
+    border:1px solid black;
+    background-color: rgb(219, 219, 219);
+}
+/*elementos de la tabla*/
+.sectiontable{
+    background-color: rgba(44, 39, 39, 0.753);
+    border-radius:10px;
+    width: 85%;
+}
+.tablaborde{
+    padding: 30px;
+}
+/* propiedades de tabla actualizar por que no me agarro los de arriva :'V */
+.tablaFondo{
+    background-color: rgba(44, 39, 39);
+    border-radius:5px;
+}
+.thcolor{
+    border:1px solid black;
+    background-color: rgb(226, 71, 71);
+    color:white;
+}
+.btnizquierda{
+    margin-left: 80px;
+}
+.btncolor{
+    background-color: rgb(212, 14, 14);
+    color: white;
+    border-top:none !important;
+    border-left: none !important;
+    border:3px solid rgb(0,0,0);
+}
+.btncolor:hover{
+    background-color: #818181;
+    color: rgb(0,0,0);
+    border-top:none !important;
+    border-left: none !important;
+    border:3px solid rgb(0,0,0);
+    height:30px;
+}
+.h1tipo{
+    margin-left: 30%;
+}
+
+.detalle{
+    width: 95%;
+}
+
+.detalle img{
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.detalle table{
+    margin-left: 30%;
+}
+
+#fotoEstudiante{
+    margin-left: 35%;
+}
+
+.detalle fieldset{
+    width: 400px;
+    margin-left: 25%;
+}
+
+.editar{
+    color: white;
+    text-align: center;
+    background-color:blue;
+    width: 55px;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.borrar{
+    color: white;
+    text-align: center;
+    background-color: crimson;
+    width: 55px;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.editar i{
+    margin-left: 19%;
+}
+
+.borrar i{
+    margin-left: 10%;
+}
+
+.editar:hover, .borrar:hover, .nuevo:hover{
+    background-color: #818181;
+    color:white;
+}
+
+.nuevo{
+    color: white;
+    text-align: center;
+    background-color: crimson;
+    width: 55px;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-left: 90%;
 }
