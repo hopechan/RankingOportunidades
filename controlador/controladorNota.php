@@ -27,18 +27,16 @@ class ControladorNota{
     function obtenerNotas(){
         try {
             $conn = new Conexion();
-            $sql = "SELECT idNota, idEstudiante, idMateria, idTipo, nota, periodo, anio, porcentaje FROM Nota";
+            $sql = "SELECT n.idNota, CONCAT(e.nombre, ' ', e.apellidos) as Estudiante, m.materia, n.nota, n.periodo FROM Nota as n INNER JOIN Estudiante as e on e.idEstudiante = n.idEstudiante INNER JOIN Materia as m ON m.idMateria = n.idMateria";
             $rs = $conn->execQueryO($sql);
             $coleccionNota = array();
             while ($nota = $rs->fetch_assoc()) {
                 $n = new Tipo();
                 $n->setIdNota($nota['idNota']);
-                $n->setIdEstudiante($nota['idEstudiante']);
-                $n->setMateria($nota['idMateria']);
-                $n->setIdTipo($nota['idTipo']);
+                $n->setIdEstudiante($nota['Estudiante']); //esto devuelve el nombre del alumno
+                $n->setMateria($nota['materia']); //esto devuelve la materia
                 $n->setNota($nota['nota']);
-                $n->setPeriodo($nota['anio']);
-                $n->setPorcentaje($nota['porcentaje']);
+                $n->setPeriodo($nota['periodo']);
                 array_push($coleccionNota, $n);
             }
             $conn = null;

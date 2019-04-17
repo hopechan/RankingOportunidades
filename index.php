@@ -19,7 +19,7 @@
         <a href="./vista/webNotas.php"><i class="fas fa-book-open"></i> Notas</a>
         <a href="./vista/webMateria.php"><i class="fas fa-certificate"></i> Materias</a>
         <a href="./vista/webCertificacion.php"><i class="fas fa-book"></i> Certificaciones</a>
-        <a href="#"><i class="fas fa-cog"></i> Configuraciones</a>
+        <a href="./vista/webParamentos.php"><i class="fas fa-cog"></i> Configuraciones</a>
     </section>
     <section class="main">
         <canvas id="grafico" width="1600" height="900"></canvas>
