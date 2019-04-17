@@ -10,7 +10,8 @@ class ControladorMate{
             $con = new Conexion();
             $idmate= $materia -> getIdMateria();
             $materia = $materia -> getMateria();
-            $sql = "INSERT INTO Materia(idMateria, materia) VALUES('".$idmate."','".$materia."')";
+            $descripcion = $materia ->getDescripcion();
+            $sql = "INSERT INTO materia(idMateria, materia, descripcion) VALUES('".$idmate."','".$materia."', '".$descripcion."')";
             $con -> execQueryO($sql);
             $con = null;
         } catch (mysqli_sql_exception $th) {
@@ -22,14 +23,15 @@ class ControladorMate{
     public function ObtenerMateria(){
         try {
             $con = new Conexion();
-            $sql = "SELECT idMateria ,materia FROM Materia";
+            $sql = "SELECT idMateria ,materia, descripcion FROM materia";
             $rs = $con -> execQueryO($sql);
             $tiposDiferent = array();
             //Se creo un objeto tipo con los datos correspondientes y se llena
             while($materia = $rs -> fetch_assoc()){
-                $tipo = new Materia() ;
-                $tipo ->setIdMateria($materia['idMateria']);
-                $tipo ->setMateria($materia['materia']);
+                $m = new Materia() ;
+                $m ->setIdMateria($materia['idMateria']);
+                $m ->setMateria($materia['materia']);
+                $m ->setDescripcion($materia['descipcion']);
                 //se esta almacenando el objeto como una coleccion
                 array_push($tiposDiferent, $tipo);
 
@@ -38,37 +40,32 @@ class ControladorMate{
             return $tiposDiferent;
         } catch (mysqli_sql_exeption $th) {
             throw new MySQLiQueryException($sql, $th ->getMessage(),$th->getCode());
-            
-            
         }
     }
     public function BuscarMateria($id){
         try {
             $con= new Conexion();
-            $sql = "SELECT idMateria, materia FROM Materia WHERE idMateria ='".$id."'";
+            $sql = "SELECT idMateria, materia, descripcion FROM materia WHERE idMateria ='".$id."'";
             $rs = $con -> execQueryO($sql);
             $tiposDiferent = array();
             while($materia = $rs -> fetch_assoc()){
                 $tipo = new Materia() ;
                 $tipo ->setIdMateria($materia['idMateria']);
                 $tipo ->setMateria($materia['materia']);
+                $tipo ->setDescripcion($materia['descripcion']);
                 array_push($tiposDiferent, $tipo);
             }
             $con = null;
             return $tiposDiferent;
-
         } catch (mysqli_sql_exception $th) {
             throw new MySQLiQueryException($sql, $th ->getMessage(),$th->getCode());
-            
         }
     }
-    public function BorrarMateri($id){
+    public function BorrarMateria($id){
         try {
             $con = new Conexion();
-            $sql = "DELETE FROM Materia WHERE idMateria = '".$id."' ";
+            $sql = "DELETE FROM materia WHERE idMateria = '".$id."' ";
             $rs = $con -> execQueryO($sql);
-            
-            
             echo '<script type="text/javascript">
             alert("Se ha borrado el elemento");
             window.location="../index.php";
@@ -76,7 +73,6 @@ class ControladorMate{
             $con = null;
         } catch (mysqli_sql_exception $th ) {
             throw new MySQLiQueryException($sql,$th ->getMessage(), $th->getCode());
-            
         }
     }
 
@@ -86,7 +82,8 @@ class ControladorMate{
             $con = new Conexion();
             $idMateria= $id->getIdMateria();
             $materia =$id->getMateria();
-            $sql = "UPDATE Materia SET materia = '".$materia."' WHERE idMateria ='".$idMateria."' ";
+            $descripcion = $id->getDescripcion();
+            $sql = "UPDATE materia SET materia = '".$materia."', descripcion = '".$descripcion."' WHERE idMateria ='".$idMateria."' ";
             $con ->execQueryO($sql);
             $con = null;
             echo '<script type="text/javascript">
@@ -98,7 +95,5 @@ class ControladorMate{
             throw new MySQLiQueryException($sql,$th ->getMessage(),$th->getCode());
         }
     }
-    
-
 }
 ?>

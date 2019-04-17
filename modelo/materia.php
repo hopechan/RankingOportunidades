@@ -2,6 +2,7 @@
 class Materia{
     private $idMateria;
     private $materia;
+    private $descripcion;
 
     public function getIdMateria(){
         return $this->idMateria;
@@ -18,6 +19,16 @@ class Materia{
 
     public function setMateria($materia){
         $this->materia = $materia;
+        return $this;
+    }
+
+    public function getDescripcion(){
+        return $this->descripcion;
+    }
+
+    public function setDescripcion($descripcion){
+        $this->descripcion = $descripcion;
+
         return $this;
     }
 }
